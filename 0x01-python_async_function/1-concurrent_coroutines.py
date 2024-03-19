@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''0x01. Python - Async'''
-from asyncio import wait,create_task,FIRST_COMPLETED
+from asyncio import wait, create_task, FIRST_COMPLETED
 # import asyncio
 from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
@@ -16,7 +16,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     delays = []
     while tasks:
         # Efficiently complete tasks and append delays in order
-        done, pending = await wait(tasks, return_when=  FIRST_COMPLETED)
+        done, pending = await wait(tasks, return_when=FIRST_COMPLETED)
         for task in done:
             delay = task.result()
             delays.append(delay)
